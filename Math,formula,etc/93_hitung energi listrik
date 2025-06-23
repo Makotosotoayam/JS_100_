@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<script>
+  // Fungsi untuk menghitung energi listrik
+  function hitungEnergiListrik() {
+  const V = parseFloat(document.getElementById('teganganListrik').value) || 0; // Tegangan
+  const I = parseFloat(document.getElementById('arusListrik').value) || 0; // Arus
+  const t = parseFloat(document.getElementById('waktuListrik').value) || 1; // Waktu
+  const E = V * I * t; // E = V × I × t
+  document.getElementById('hasilEnergiListrik').textContent = E.toFixed(2);
+}
+</script>
+
+</head>
+<body>
+  <h2>Hitung Energi Listrik</h2>
+    <label for="teganganListrik">Masukkan tegangan (V):</label>
+    <input type="number" id="teganganListrik" />
+    <label for="arusListrik">Masukkan arus (A):</label>
+    <input type="number" id="arusListrik" />
+    <label for="waktuListrik">Masukkan waktu (s):</label>
+    <input type="number" id="waktuListrik" />
+    <button onclick="hitungEnergiListrik()">Hitung Energi Listrik</button>
+    <p>Hasil: <span id="hasilEnergiListrik"> </span></p>
+</body>
+</html>

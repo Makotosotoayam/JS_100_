@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<script>
+  // Fungsi untuk menghitung tekanan
+  function hitungTekanan() {
+  const F = parseFloat(document.getElementById('gayaTekanan').value) || 0; // Gaya
+  const A = parseFloat(document.getElementById('luas').value) || 1; // Luas
+  const p = F / A; // p = F / A
+  document.getElementById('hasilTekanan').textContent = p.toFixed(2);
+}
+</script>
+
+</head>
+<body>
+  <h2>Hitung Tekanan</h2>
+    <label for="gayaTekanan">Masukkan gaya (N):</label>
+    <input type="number" id="gayaTekanan" />
+    <label for="luas">Masukkan luas (m²):</label>
+    <input type="number" id="luas" />
+    <button onclick="hitungTekanan()">Hitung Tekanan</button>
+    <p>Hasil: <span id="hasilTekanan"> </span></p>
+</body>
+</html>

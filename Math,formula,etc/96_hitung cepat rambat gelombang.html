@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<script>
+  // Fungsi untuk menghitung cepat rambat gelombang
+  function hitungCepatRambatGelombang() {
+  const lambda = parseFloat(document.getElementById('panjangGelombang').value) || 0; // Panjang gelombang
+  const f = parseFloat(document.getElementById('frekuensiGelombang').value) || 0; // Frekuensi
+  const v = lambda * f; // v = λ × f
+  document.getElementById('hasilCepatRambat').textContent = v.toFixed(2);
+}
+</script>
+
+</head>
+<body>
+  <h2>Hitung Cepat Rambat Gelombang</h2>
+    <label for="panjangGelombang">Masukkan panjang gelombang (m):</label>
+    <input type="number" id="panjangGelombang" />
+    <label for="frekuensiGelombang">Masukkan frekuensi (Hz):</label>
+    <input type="number" id="frekuensiGelombang" />
+    <button onclick="hitungCepatRambatGelombang()">Hitung Cepat Rambat Gelombang</button>
+    <p>Hasil: <span id="hasilCepatRambat"> </span></p>
+</body>
+</html>

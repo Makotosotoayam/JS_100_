@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Income Level</title>
+</head>
+<body>
+    <h2>Income Level</h2>
+    <label for="income">Masukkan pendapatan bulanan Anda:</label>
+    <input type="number" id="income">
+    <button onclick="checkIncome()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkIncome() {
+            const income = parseInt(document.getElementById('income').value);
+            let result = "";
+            
+            if (income < 1000000) {
+                if (income < 500000) {
+                    result = "Pendapatan Anda sangat rendah.";
+                } else {
+                    result = "Pendapatan Anda cukup rendah.";
+                }
+            } else {
+                if (income < 5000000) {
+                    result = "Pendapatan Anda menengah.";
+                } else {
+                    result = "Pendapatan Anda tinggi.";
+                }
+            }
+            
+            document.getElementById('result').textContent = result;
+        }
+    </script>
+</body>
+</html>

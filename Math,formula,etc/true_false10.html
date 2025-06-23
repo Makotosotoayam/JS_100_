@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digit Check</title>
+</head>
+<body>
+    <h2>Digit Check</h2>
+    <label for="sentence">Masukkan sebuah kalimat:</label>
+    <input type="text" id="sentence">
+    <button onclick="checkDigits()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkDigits() {
+            const sentence = document.getElementById('sentence').value;
+            const isAllDigits = /^\d+$/.test(sentence);
+            document.getElementById('result').textContent = isAllDigits;
+        }
+    </script>
+</body>
+</html>

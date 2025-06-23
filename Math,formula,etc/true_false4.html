@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Greater Than 10 Check</title>
+</head>
+<body>
+    <h2>Greater Than 10 Check</h2>
+    <label for="number">Masukkan angka:</label>
+    <input type="number" id="number">
+    <button onclick="checkGreater()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkGreater() {
+            const num = parseInt(document.getElementById('number').value);
+            const isGreater = num > 10;
+            document.getElementById('result').textContent = isGreater;
+        }
+    </script>
+</body>
+</html>

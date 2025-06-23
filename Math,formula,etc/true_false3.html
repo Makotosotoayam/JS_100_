@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Empty String Check</title>
+</head>
+<body>
+    <h2>Empty String Check</h2>
+    <label for="sentence">Masukkan kalimat:</label>
+    <input type="text" id="sentence">
+    <button onclick="checkEmpty()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkEmpty() {
+            const sentence = document.getElementById('sentence').value;
+            const isEmpty = sentence === "";
+            document.getElementById('result').textContent = isEmpty;
+        }
+    </script>
+</body>
+</html>

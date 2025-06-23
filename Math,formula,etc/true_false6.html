@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Range Check (1-100)</title>
+</head>
+<body>
+    <h2>Range Check (1-100)</h2>
+    <label for="number">Masukkan angka:</label>
+    <input type="number" id="number">
+    <button onclick="checkRange()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkRange() {
+            const num = parseInt(document.getElementById('number').value);
+            const inRange = num >= 1 && num <= 100;
+            document.getElementById('result').textContent = inRange;
+        }
+    </script>
+</body>
+</html>

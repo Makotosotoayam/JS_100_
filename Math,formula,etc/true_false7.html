@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Length Check</title>
+</head>
+<body>
+    <h2>String Length Check</h2>
+    <label for="word">Masukkan sebuah kata:</label>
+    <input type="text" id="word">
+    <button onclick="checkLength()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkLength() {
+            const word = document.getElementById('word').value;
+            const isLong = word.length > 5;
+            document.getElementById('result').textContent = isLong;
+        }
+    </script>
+</body>
+</html>

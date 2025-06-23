@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exam Grade</title>
+</head>
+<body>
+    <h2>Exam Grade</h2>
+    <label for="score">Masukkan nilai ujian:</label>
+    <input type="number" id="score">
+    <button onclick="checkGrade()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkGrade() {
+            const score = parseInt(document.getElementById('score').value);
+            let result = "";
+            
+            if (score >= 60) {
+                if (score >= 80) {
+                    result = "Anda lulus dengan nilai A!";
+                } else if (score >= 70) {
+                    result = "Anda lulus dengan nilai B!";
+                } else {
+                    result = "Anda lulus dengan nilai C!";
+                }
+            } else {
+                result = "Anda tidak lulus.";
+            }
+            
+            document.getElementById('result').textContent = result;
+        }
+    </script>
+</body>
+</html>

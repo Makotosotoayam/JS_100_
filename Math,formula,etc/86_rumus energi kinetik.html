@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<script>
+  // Fungsi untuk menghitung energi kinetik
+  function hitungEnergiKinetik() {
+  const m = parseFloat(document.getElementById('massaEk').value) || 0; // Massa
+  const v = parseFloat(document.getElementById('kecepatanEk').value) || 0; // Kecepatan
+  const Ek = 0.5 * m * Math.pow(v, 2); // Ek = ½ × m × v²
+  document.getElementById('hasilEk').textContent = Ek.toFixed(2);
+}
+</script>
+
+</head>
+<body>
+  <h2>Hitung Energi Kinetik</h2>
+    <label for="massaEk">Masukkan massa (kg):</label>
+    <input type="number" id="massaEk" />
+    <label for="kecepatanEk">Masukkan kecepatan (m/s):</label>
+    <input type="number" id="kecepatanEk" />
+    <button onclick="hitungEnergiKinetik()">Hitung Energi Kinetik</button>
+    <p>Hasil: <span id="hasilEk"> </span></p>
+</body>
+</html>

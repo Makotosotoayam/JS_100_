@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biaya Pengiriman</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Biaya Pengiriman</h1>
+        <input type="number" id="weight" placeholder="Masukkan berat paket (kg)" step="0.1" min="0">
+        <button onclick="calculateShippingCost()">Hitung Biaya</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateShippingCost() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const resultDiv = document.getElementById('result');
+            
+            if (isNaN(weight) || weight <= 0) {
+                resultDiv.innerHTML = "Mohon masukkan berat yang valid";
+                return;
+            }
+            
+            let cost;
+            if (weight <= 1) {
+                cost = 5000;
+            } else if (weight <= 5) {
+                cost = 8000;
+            } else if (weight <= 10) {
+                cost = 12000;
+            } else {
+                cost = 20000;
+            }
+            
+            resultDiv.innerHTML = `Biaya pengiriman adalah Rp ${cost.toLocaleString('id-ID')}`;
+        }
+    </script>
+</body>
+</html>

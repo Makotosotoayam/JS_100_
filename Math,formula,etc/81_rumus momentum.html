@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<script>
+  // Fungsi untuk menghitung momentum
+  function hitungMomentum() {
+  const m = parseFloat(document.getElementById('massaMomentum').value) || 0; // Massa
+  const v = parseFloat(document.getElementById('kecepatanMomentum').value) || 0; // Kecepatan
+  const p = m * v; // p = m × v
+  document.getElementById('hasilMomentum').textContent = p.toFixed(2);
+}
+</script>
+
+</head>
+<body>
+  <h2>Hitung Momentum</h2>
+    <label for="massaMomentum">Masukkan massa (kg):</label>
+    <input type="number" id="massaMomentum" />
+    <label for="kecepatanMomentum">Masukkan kecepatan (m/s):</label>
+    <input type="number" id="kecepatanMomentum" />
+    <button onclick="hitungMomentum()">Hitung Momentum</button>
+    <p>Hasil: <span id="hasilMomentum"> </span></p>
+</body>
+</html>

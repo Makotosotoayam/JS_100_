@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<script>
+  // Fungsi untuk menghitung berat benda
+  function hitungBerat() {
+  const m = parseFloat(document.getElementById('massaBerat').value) || 0; // Massa
+  const g = 9.81; // Gravitasi
+  const w = m * g; // w = m × g
+  document.getElementById('hasilBerat').textContent = w.toFixed(2);
+}
+</script>
+
+</head>
+<body>
+  <h2>Hitung Berat Benda</h2>
+    <label for="massaBerat">Masukkan massa (kg):</label>
+    <input type="number" id="massaBerat" />
+    <button onclick="hitungBerat()">Hitung Berat</button>
+    <p>Hasil: <span id="hasilBerat"> </span></p>
+</body>
+</html>

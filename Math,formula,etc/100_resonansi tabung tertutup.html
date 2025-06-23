@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<script>
+  // Fungsi untuk menghitung frekuensi resonansi tabung tertutup
+  function hitungFrekuensiResonansi() {
+  const v = parseFloat(document.getElementById('cepatRambatResonansi').value) || 0; // Cepat rambat
+  const L = parseFloat(document.getElementById('panjangTabung').value) || 1; // Panjang tabung
+  const f = v / (4 * L); // f = v / (4 × L)
+  document.getElementById('hasilFrekuensiResonansi').textContent = f.toFixed(2);
+}
+
+</script>
+
+</head>
+<body>
+  <h2>Hitung Frekuensi Resonansi Tabung Tertutup</h2>
+    <label for="cepatRambatResonansi">Masukkan cepat rambat (m/s):</label>
+    <input type="number" id="cepatRambatResonansi" />
+    <label for="panjangTabung">Masukkan panjang tabung (m):</label>
+    <input type="number" id="panjangTabung" />
+    <button onclick="hitungFrekuensiResonansi()">Hitung Frekuensi Resonansi</button>
+    <p>Hasil: <span id="hasilFrekuensiResonansi"> </span></p>
+</body>
+</html>

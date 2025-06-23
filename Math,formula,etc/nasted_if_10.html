@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Triangle Type</title>
+</head>
+<body>
+    <h2>Triangle Type</h2>
+    <label for="side1">Masukkan panjang sisi pertama segitiga:</label>
+    <input type="number" id="side1"><br><br>
+    <label for="side2">Masukkan panjang sisi kedua segitiga:</label>
+    <input type="number" id="side2"><br><br>
+    <label for="side3">Masukkan panjang sisi ketiga segitiga:</label>
+    <input type="number" id="side3"><br><br>
+    <button onclick="checkTriangle()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkTriangle() {
+            const a = parseInt(document.getElementById('side1').value);
+            const b = parseInt(document.getElementById('side2').value);
+            const c = parseInt(document.getElementById('side3').value);
+            let result = "";
+            
+            if (a + b > c && a + c > b && b + c > a) {
+                if (a === b && b === c) {
+                    result = "Segitiga tersebut adalah segitiga sama sisi.";
+                } else if (a === b || a === c || b === c) {
+                    result = "Segitiga tersebut adalah segitiga sama kaki.";
+                } else {
+                    result = "Segitiga tersebut adalah segitiga sembarang.";
+                }
+            } else {
+                result = "Ketiga sisi tidak membentuk segitiga.";
+            }
+            
+            document.getElementById('result').textContent = result;
+        }
+    </script>
+</body>
+</html>

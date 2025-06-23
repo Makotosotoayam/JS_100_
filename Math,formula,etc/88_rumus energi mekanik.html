@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<script>
+  // Fungsi untuk menghitung energi mekanik
+  function hitungEnergiMekanik() {
+  const Ek = parseFloat(document.getElementById('energiKinetikEm').value) || 0; // Energi Kinetik
+  const Ep = parseFloat(document.getElementById('energiPotensialEm').value) || 0; // Energi Potensial
+  const Em = Ek + Ep; // Em = Ek + Ep
+  document.getElementById('hasilEm').textContent = Em.toFixed(2);
+}
+</script>
+
+</head>
+<body>
+  <h2>Hitung Energi Mekanik</h2>
+    <label for="energiKinetikEm">Masukkan energi kinetik (J):</label>
+    <input type="number" id="energiKinetikEm" />
+    <label for="energiPotensialEm">Masukkan energi potensial (J):</label>
+    <input type="number" id="energiPotensialEm" />
+    <button onclick="hitungEnergiMekanik()">Hitung Energi Mekanik</button>
+    <p>Hasil: <span id="hasilEm"> </span></p>
+</body>
+</html>

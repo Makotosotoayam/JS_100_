@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<script>
+  // Fungsi untuk menghitung hukum Ohm
+  function hitungHukumOhm() {
+  const I = parseFloat(document.getElementById('arus').value) || 0; // Arus
+  const R = parseFloat(document.getElementById('resistansi').value) || 0; // Resistansi
+  const V = I * R; // V = I × R
+  document.getElementById('hasilHukumOhm').textContent = V.toFixed(2);
+}
+</script>
+
+</head>
+<body>
+  <h2>Hitung Hukum Ohm</h2>
+    <label for="arus">Masukkan arus (A):</label>
+    <input type="number" id="arus" />
+    <label for="resistansi">Masukkan resistansi (Ω):</label>
+    <input type="number" id="resistansi" />
+    <button onclick="hitungHukumOhm()">Hitung Hukum Ohm</button>
+    <p>Hasil: <span id="hasilHukumOhm"> </span></p>
+</body>
+</html>

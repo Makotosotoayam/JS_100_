@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Properties</title>
+</head>
+<body>
+    <h2>Number Properties</h2>
+    <label for="number">Masukkan angka:</label>
+    <input type="number" id="number">
+    <button onclick="checkNumber()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkNumber() {
+            const num = parseInt(document.getElementById('number').value);
+            let result = "";
+            
+            if (num % 2 === 0) {
+                if (num > 0) {
+                    result = "Angka genap dan positif.";
+                } else if (num < 0) {
+                    result = "Angka genap dan negatif.";
+                } else {
+                    result = "Angka genap dan nol.";
+                }
+            } else {
+                if (num > 0) {
+                    result = "Angka ganjil dan positif.";
+                } else if (num < 0) {
+                    result = "Angka ganjil dan negatif.";
+                } else {
+                    result = "Angka ganjil dan nol.";
+                }
+            }
+            
+            document.getElementById('result').textContent = result;
+        }
+    </script>
+</body>
+</html>

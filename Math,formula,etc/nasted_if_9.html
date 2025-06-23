@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pass/Fail Check</title>
+</head>
+<body>
+    <h2>Pass/Fail Check</h2>
+    <label for="assignment">Masukkan nilai tugas:</label>
+    <input type="number" id="assignment"><br><br>
+    <label for="exam">Masukkan nilai ujian:</label>
+    <input type="number" id="exam"><br><br>
+    <button onclick="checkResult()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkResult() {
+            const assignment = parseInt(document.getElementById('assignment').value);
+            const exam = parseInt(document.getElementById('exam').value);
+            let result = "";
+            
+            if (assignment >= 60) {
+                if (exam >= 70) {
+                    result = "Anda lulus!";
+                } else {
+                    result = "Anda tidak lulus karena nilai ujian kurang.";
+                }
+            } else {
+                result = "Anda tidak lulus karena nilai tugas kurang.";
+            }
+            
+            document.getElementById('result').textContent = result;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<script>
+  // Fungsi untuk menghitung energi potensial
+  function hitungEnergiPotensial() {
+  const m = parseFloat(document.getElementById('massaEp').value) || 0; // Massa
+  const g = 9.81; // Gravitasi
+  const h = parseFloat(document.getElementById('tinggiEp').value) || 0; // Tinggi
+  const Ep = m * g * h; // Ep = m × g × h
+  document.getElementById('hasilEp').textContent = Ep.toFixed(2);
+}
+</script>
+
+</head>
+<body>
+  <h2>Hitung Energi Potensial</h2>
+    <label for="massaEp">Masukkan massa (kg):</label>
+    <input type="number" id="massaEp" />
+    <label for="tinggiEp">Masukkan tinggi (m):</label>
+    <input type="number" id="tinggiEp" />
+    <button onclick="hitungEnergiPotensial()">Hitung Energi Potensial</button>
+    <p>Hasil: <span id="hasilEp"> </span></p>
+</body>
+</html>

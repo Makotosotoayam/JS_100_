@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<script>
+  // Fungsi untuk menghitung gaya
+  function hitungGaya() {
+  const m = parseFloat(document.getElementById('massaGaya').value) || 0; // Massa
+  const a = parseFloat(document.getElementById('percepatanGaya').value) || 0; // Percepatan
+  const F = m * a; // F = m × a
+  document.getElementById('hasilGaya').textContent = F.toFixed(2);
+}
+</script>
+
+</head>
+<body>
+  <h2>Hitung Gaya</h2>
+    <label for="massaGaya">Masukkan massa (kg):</label>
+    <input type="number" id="massaGaya" />
+    <label for="percepatanGaya">Masukkan percepatan (m/s²):</label>
+    <input type="number" id="percepatanGaya" />
+    <button onclick="hitungGaya()">Hitung Gaya</button>
+    <p>Hasil: <span id="hasilGaya"> </span></p>
+</body>
+</html>

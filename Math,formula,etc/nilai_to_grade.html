@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi Nilai ke Grade</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Konversi Nilai ke Grade</h1>
+        <input type="number" id="score" placeholder="Masukkan nilai (0-100)">
+        <button onclick="convertToGrade()">Konversi ke Grade</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function convertToGrade() {
+            const score = parseInt(document.getElementById('score').value);
+            const resultDiv = document.getElementById('result');
+            
+            if (isNaN(score) || score < 0 || score > 100) {
+                resultDiv.innerHTML = "Mohon masukkan nilai antara 0-100";
+                return;
+            }
+            
+            let grade;
+            if (score >= 100) {
+                grade = "Grade A";
+            } else if (score >= 80) {
+                grade = "Grade B";
+            } else if (score >= 60) {
+                grade = "Grade C";
+            } else if (score >= 55) {
+                grade = "Grade D";
+            } else {
+                grade = "Grade E";
+            }
+            
+            resultDiv.innerHTML = `Nilai: ${score}, Grade: ${grade}`;
+        }
+    </script>
+</body>
+</html>

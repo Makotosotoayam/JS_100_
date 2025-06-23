@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<script>
+  // Fungsi untuk menghitung efisiensi
+  function hitungEfisiensi() {
+  const Wk = parseFloat(document.getElementById('usahaBermanfaat').value) || 0; // Usaha Bermanfaat
+  const Wm = parseFloat(document.getElementById('usahaTotal').value) || 1; // Usaha Total
+  const efisiensi = (Wk / Wm) * 100; // efisiensi = (W_k / W_m) × 100%
+  document.getElementById('hasilEfisiensi').textContent = efisiensi.toFixed(2) + '%';
+}
+</script>
+
+</head>
+<body>
+  <h2>Hitung Efisiensi</h2>
+    <label for="usahaBermanfaat">Masukkan usaha bermanfaat (J):</label>
+    <input type="number" id="usahaBermanfaat" />
+    <label for="usahaTotal">Masukkan usaha total (J):</label>
+    <input type="number" id="usahaTotal" />
+    <button onclick="hitungEfisiensi()">Hitung Efisiensi</button>
+    <p>Hasil: <span id="hasilEfisiensi"> </span></p>
+</body>
+</html>

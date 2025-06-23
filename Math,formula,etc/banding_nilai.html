@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perbandingan Nilai</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Perbandingan Nilai</h1>
+        <input type="number" id="valueA" placeholder="Masukkan nilai A">
+        <input type="number" id="valueB" placeholder="Masukkan nilai B">
+        <button onclick="compareValues()">Bandingkan</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function compareValues() {
+            const a = parseInt(document.getElementById('valueA').value);
+            const b = parseInt(document.getElementById('valueB').value);
+            const resultDiv = document.getElementById('result');
+            
+            if (isNaN(a) || isNaN(b)) {
+                resultDiv.innerHTML = "Mohon masukkan kedua nilai";
+                return;
+            }
+            
+            if (b > a) {
+                resultDiv.innerHTML = "Nilai B lebih besar dari pada A";
+            } else if (a == b) {
+                resultDiv.innerHTML = "Nilai B dan nilai A sama";
+            } else {
+                resultDiv.innerHTML = "Nilai B lebih kecil dari pada nilai A";
+            }
+        }
+    </script>
+</body>
+</html>

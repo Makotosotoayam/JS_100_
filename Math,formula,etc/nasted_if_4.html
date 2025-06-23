@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prime Number Check</title>
+</head>
+<body>
+    <h2>Prime Number Check</h2>
+    <label for="num">Masukkan angka:</label>
+    <input type="number" id="num">
+    <button onclick="checkPrime()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkPrime() {
+            const num = parseInt(document.getElementById('num').value);
+            let result = "";
+            
+            if (num > 1) {
+                let isPrime = true;
+                for (let i = 2; i < num; i++) {
+                    if (num % i === 0) {
+                        isPrime = false;
+                        break;
+                    }
+                }
+                result = isPrime ? `${num} adalah bilangan prima.` : `${num} bukan bilangan prima.`;
+            } else {
+                result = `${num} bukan bilangan prima.`;
+            }
+            
+            document.getElementById('result').textContent = result;
+        }
+    </script>
+</body>
+</html>

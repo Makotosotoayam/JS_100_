@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Purchase Discount</title>
+</head>
+<body>
+    <h2>Purchase Discount</h2>
+    <label for="purchase">Masukkan total pembelian:</label>
+    <input type="number" id="purchase">
+    <button onclick="calculateDiscount()">Calculate</button>
+    <p id="result"></p>
+
+    <script>
+        function calculateDiscount() {
+            const purchase = parseFloat(document.getElementById('purchase').value);
+            let result = "";
+            
+            if (purchase > 0) {
+                if (purchase > 100000) {
+                    const discount = purchase * 0.8;
+                    result = `Diskon 20% diberikan. Total pembelian setelah diskon: ${discount.toFixed(2)}`;
+                } else if (purchase > 50000) {
+                    const discount = purchase * 0.9;
+                    result = `Diskon 10% diberikan. Total pembelian setelah diskon: ${discount.toFixed(2)}`;
+                } else {
+                    result = `Tidak ada diskon. Total pembelian: ${purchase.toFixed(2)}`;
+                }
+            } else {
+                result = "Total pembelian tidak valid.";
+            }
+            
+            document.getElementById('result').textContent = result;
+        }
+    </script>
+</body>
+</html>

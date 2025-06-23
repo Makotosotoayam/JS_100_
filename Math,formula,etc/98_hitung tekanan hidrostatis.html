@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<script>
+  // Fungsi untuk menghitung tekanan hidrostatis
+  function hitungTekananHidrostatis() {
+  const rho = parseFloat(document.getElementById('massaJenis').value) || 0; // Massa jenis
+  const g = 9.81; // Gravitasi
+  const h = parseFloat(document.getElementById('kedalaman').value) || 0; // Kedalaman
+  const p = rho * g * h; // p = ρ × g × h
+  document.getElementById('hasilTekananHidrostatis').textContent = p.toFixed(2);
+}
+</script>
+
+</head>
+<body>
+  <h2>Hitung Tekanan Hidrostatis</h2>
+    <label for="massaJenis">Masukkan massa jenis (kg/m³):</label>
+    <input type="number" id="massaJenis" />
+    <label for="kedalaman">Masukkan kedalaman (m):</label>
+    <input type="number" id="kedalaman" />
+    <button onclick="hitungTekananHidrostatis()">Hitung Tekanan Hidrostatis</button>
+    <p>Hasil: <span id="hasilTekananHidrostatis"> </span></p>
+</body>
+</html>

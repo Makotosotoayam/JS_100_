@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<script>
+  // Fungsi untuk menghitung kuat medan listrik
+  function hitungKuatMedanListrik() {
+  const F = parseFloat(document.getElementById('gayaMedan').value) || 0; // Gaya
+  const q = parseFloat(document.getElementById('muatan').value) || 1; // Muatan
+  const E = F / q; // E = F / q
+  document.getElementById('hasilKuatMedan').textContent = E.toFixed(2);
+}
+</script>
+
+</head>
+<body>
+  <h2>Hitung Kuat Medan Listrik</h2>
+    <label for="gayaMedan">Masukkan gaya (N):</label>
+    <input type="number" id="gayaMedan" />
+    <label for="muatan">Masukkan muatan (C):</label>
+    <input type="number" id="muatan" />
+    <button onclick="hitungKuatMedanListrik()">Hitung Kuat Medan Listrik</button>
+    <p>Hasil: <span id="hasilKuatMedan"> </span></p>
+</body>
+</html>

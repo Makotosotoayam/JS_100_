@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nama Hari</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nama Hari</h1>
+        <input type="text" id="day" placeholder="Masukkan nama hari (senin, selasa, dll)">
+        <button onclick="checkDay()">Cek Hari</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function checkDay() {
+            const day = document.getElementById('day').value.toLowerCase();
+            const resultDiv = document.getElementById('result');
+            
+            if (!day) {
+                resultDiv.innerHTML = "Mohon masukkan nama hari";
+                return;
+            }
+            
+            let message;
+            switch(day) {
+                case "senin": message = "Hari ini adalah Senin"; break;
+                case "selasa": message = "Hari ini adalah Selasa"; break;
+                case "rabu": message = "Hari ini adalah Rabu"; break;
+                case "kamis": message = "Hari ini adalah Kamis"; break;
+                case "jumat": message = "Hari ini adalah Jumat"; break;
+                case "sabtu": message = "Hari ini adalah Sabtu"; break;
+                case "minggu": message = "Hari ini adalah Minggu"; break;
+                default: message = "Hari tidak valid";
+            }
+            
+            resultDiv.innerHTML = message;
+        }
+    </script>
+</body>
+</html>

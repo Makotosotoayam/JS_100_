@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even Number Check</title>
+</head>
+<body>
+    <h2>Even Number Check</h2>
+    <label for="number">Masukkan angka:</label>
+    <input type="number" id="number">
+    <button onclick="checkEven()">Check</button>
+    <p id="result"></p>
+
+    <script>
+        function checkEven() {
+            const num = parseInt(document.getElementById('number').value);
+            const isEven = num % 2 === 0;
+            document.getElementById('result').textContent = isEven;
+        }
+    </script>
+</body>
+</html>

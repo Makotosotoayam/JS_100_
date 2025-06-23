@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // Fungsi untuk menghitung percepatan
+    function hitungPercepatan() {
+    const deltaV = parseFloat(document.getElementById('deltaV').value) || 0; // Perubahan kecepatan
+    const t = parseFloat(document.getElementById('waktuPercepatan').value) || 1; // Waktu
+    const a = deltaV / t; // a = Δv / t
+    document.getElementById('hasilPercepatan').textContent = a.toFixed(2);
+}
+  </script>
+</head>
+<body>
+  <h2>Hitung Percepatan</h2>
+    <label for="deltaV">Masukkan Δv (m/s):</label>
+    <input type="number" id="deltaV" />
+    <label for="waktuPercepatan">Masukkan waktu (s):</label>
+    <input type="number" id="waktuPercepatan" />
+    <button onclick="hitungPercepatan()">Hitung Percepatan</button>
+    <p>Hasil: <span id="hasilPercepatan"> </span></p>
+</body>
+</html>

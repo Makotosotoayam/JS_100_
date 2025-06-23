@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<script>
+  // Fungsi untuk menghitung daya
+  function hitungDaya() {
+  const W = parseFloat(document.getElementById('usahaDaya').value) || 0; // Usaha
+  const t = parseFloat(document.getElementById('waktuDaya').value) || 1; // Waktu
+  const P = W / t; // P = W / t
+  document.getElementById('hasilDaya').textContent = P.toFixed(2);
+}
+</script>
+
+</head>
+<body>
+  <h2>Hitung Daya</h2>
+    <label for="usahaDaya">Masukkan usaha (J):</label>
+    <input type="number" id="usahaDaya" />
+    <label for="waktuDaya">Masukkan waktu (s): 
+    <input type="number" id="waktuDaya" />
+    <button onclick="hitungDaya()">Hitung Daya</button>
+    <p>Hasil: <span id="hasilDaya"> </span></p>
+</body>
+</html>
