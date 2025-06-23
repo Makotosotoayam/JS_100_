@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Menghitung Impuls</title>
 
 <script>
-  // Fungsi untuk menghitung impuls
   function hitungImpuls() {
   const F = parseFloat(document.getElementById('gaya').value) || 0; // Gaya
   const deltaT = parseFloat(document.getElementById('deltaT').value) || 1; // Waktu
@@ -17,7 +16,7 @@
 
 </head>
 <body>
-  <h2>Hitung Impuls</h2>
+  <h1>Hitung Impuls</h1>
     <label for="gaya">Masukkan gaya (N):</label>
     <input type="number" id="gaya" />
     <label for="deltaT">Masukkan Δt (s):</label>
